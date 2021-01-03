@@ -100,6 +100,15 @@ class Trivia:
             print(f"{idx + 1}. {score[0]}: {score[1]} correct answers.")
         return
 
+    def print_status(self):
+        overall = []
+        for participant in self.participants:
+            overall.append((participant.name, sum(participant.correct_record)))
+        print("\nCurrent Rankings:")
+        for idx, score in enumerate(overall):
+            print(f"{idx + 1}. {score[0]}: {score[1]} correct answers.")
+        return
+
     def play_turn(self, turn):
         turn = turn % len(self.participants)
         participant = self.participants[turn]
@@ -129,6 +138,13 @@ class Trivia:
             print(f"Turn {turn + 1}\n")
             self.play_turn(turn)
             turn += 1
+            if not self.kill_signal:
+                input_str = ''.join(["Press enter to go on to the next turn,",\
+                                 " or type 'status' to see the",\
+                                 " current scores. "])
+                next_step = input(input_str)
+                if next_step.lower() == 'status':
+                    self.print_status()
             print("========================================\n")
         print("Thanks for playing! Here are the results:\n")
         self.print_results()
