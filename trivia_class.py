@@ -90,9 +90,8 @@ class Trivia:
             print(f"======={participant.name}=======\n")
             for i in range(self.n_tiers):
                 print(f"Tier {i} questions asked: ", 
+                      f"{participant.correct_record[i]} /",
                       f"{participant.question_record[i]}\n")
-                print(f"Tier {i} questions correct: ",
-                      f"{participant.correct_record[i]}\n")
         overall = [(participant.name, sum(participant.correct_record))\
                    for participant in self.participants]
         overall.sort(key=lambda x: x[1], reverse=True)
