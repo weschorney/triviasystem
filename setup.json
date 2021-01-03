@@ -1,0 +1,4 @@
+{
+"participants":["Wes", "Josh", "AJ"],
+"questions":[{"question_text":"sample question 1", "answers":["A: Test\n", "B: Test2\n", "C: Test3\n", "D: Test4\n"], "correct_answer":"A", "tier": 2, "is_asked":false}, {"question_text":"sample question 2", "answers":["A: Test\n", "B: Test2\n", "C: Test3\n", "D: Test4\n"], "correct_answer":"A", "tier": 3, "is_asked":false}]
+}
