@@ -35,3 +35,6 @@ def question_csv_to_json(csv_path, output_path='setup.json'):
     with open(output_path, 'w') as f:
         json.dump(json_dict, f)
     return
+
+if __name__ == '__main__':
+    question_csv_to_json('questions.csv', output_path='setup.json')
